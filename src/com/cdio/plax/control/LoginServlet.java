@@ -42,8 +42,9 @@ public class LoginServlet extends HttpServlet {
 		}
 		else{
 			
-			
+			System.out.println(stu.getStuPw());
 			response.sendRedirect("mainmenu.jsp");
+			
 		}
 		
 	}
