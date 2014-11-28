@@ -5,7 +5,7 @@ package com.cdio.planx.domain;
 
 /**
  * 教师表
- * @author 黄钦煌
+ * @author 
  *
  */
 public class Teacher extends User {

@@ -81,10 +81,10 @@
 					<label>身份验证 <select name="userPermi">
 							<option value=" ">请选择</option>
 							<option value="0">学生</option>
-							<option value="1">教师</option>
 							<option value="1">班干部</option>
-							<option value="1">班主任</option>
-							<option value="2">管理员</option>
+							<option value="2">教师</option>
+							<option value="3">班主任</option>
+							<option value="4">管理员</option>
 					</select>
 					</label>
 				</div>
