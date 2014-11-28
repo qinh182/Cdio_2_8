@@ -1,14 +1,9 @@
 <%@ page language="java" import="java.util.*,java.net.*" pageEncoding="utf-8"%>
-<%
-	String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-	System.out.println(request.getAttribute("userID"));
-%>
+
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<base href="<%=basePath%>">
 
 <title>登陆</title>
 
@@ -28,9 +23,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script
 	src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js"></script>
 </head>
+<script type="text/javascript">
+	
+	function con(){
+		alert("请选");
+	}
+	
+	
+	function checkPermi(){
+		with(document.forms["frm"]){
+      	var i=userPermi.options[userPermi.selectedIndex].value;
+      	if(i==" "){
+      		alert("请选择角色！");
+     	}
+		}
+	}
 
+</script>
 
 <body>
+<%
+	Object message=request.getAttribute("error");
+	if(message!=null){%>
+		
+<p onload="con();"></p>
+
+<%} %>
 	<div class="container">
 		<h1 class="page-header">XXXX系统</h1>
 		<div class="modal" id="login">
@@ -39,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 
 			<div class="modal-body">
-				<form class="form-horizontal" action="login" method="post">
+				<form class="form-horizontal" action="login" method="post"name="frm">
 					<div class="control-group">
 						<label class="control-label">用户名</label>
 						<div class="controls">
@@ -57,7 +75,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			<div class="modal-footer">
 				<div class="pull-left">
-					<label>身份验证 <select name="userType">
+					<label>身份验证 <select name="userPermi">
+							<option value=" ">请选择</option>
 							<option value="0">学生</option>
 							<option value="1">教师</option>
 							<option value="1">班干部</option>
@@ -67,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</label>
 				</div>
 
-				<button type="submit" class="btn btn-primary">登陆</button>
+				<button class="btn btn-primary" onclick="checkPermi();">登陆</button>
 				</form>
 			</div>
 </body>

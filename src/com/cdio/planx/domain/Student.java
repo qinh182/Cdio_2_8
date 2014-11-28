@@ -8,7 +8,7 @@ package com.cdio.planx.domain;
  * @author Administrator
  *
  */
-public class Student {
+public class Student extends User {
 
 	/**学生ID*/
 	private String stuID;
