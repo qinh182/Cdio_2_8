@@ -25,8 +25,8 @@
 </head>
 <script type="text/javascript">
 	
-	function con(){
-		alert("请选");
+	function con(a){
+		alert(a);
 	}
 	
 	
@@ -44,11 +44,14 @@
 <body>
 <%
 	Object message=request.getAttribute("error");
-	if(message!=null){%>
-		
-<p onload="con();"></p>
+	if(message!=null){
+		out.print("<body onload=\"con(\'"+message+"\');\"></body>");
+	}	
+	
+%>
 
-<%} %>
+
+
 	<div class="container">
 		<h1 class="page-header">XXXX系统</h1>
 		<div class="modal" id="login">
