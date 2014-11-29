@@ -34,46 +34,46 @@
 			<li><a href="#tab3" data-toggle="tab">其它下载</a></li>
 		</ul>
 		<div class="tab-content">
-			<%
+			<div class="tab-pane active" id="tab1">
+				<%
 				ResourceDao rd = new ResourceDaoImpl();
 				List<Resource> listRes = rd.listRes();
-				for (Resource res : listRes) {
+				for (Resource res : listRes) 
 					if (res.getResType().equals("movie")) {
 			%>
-			<div class="tab-pane active" id="tab1">
 				<blockquote>
 					<img src="" width="64" height="64" /><span class="STYLE1"><span
 						class="STYLE2"><%=res.getResName()%></span></span></br> <span><%=res.getResDescribe()%></span>
 					<div align="right">
 						<a type="button" href="界面.rar" style="colorL:red;">下载</a>
 				</blockquote>
+		<% 		}%>
 			</div>
+			<div class="tab-pane " id="tab2">
 			<%
-				}
+				for (Resource res : listRes) 
 					if (res.getResType().equals("book")) {
 			%>
-			<div class="tab-pane " id="tab2">
 				<blockquote>
 					<span class="STYLE2"><%=res.getResName()%></span></br> </span><%=res.getResDescribe()%></span>
 					<div align="right">
 						<a type="button" href="界面.rar" style="colorL:red;">下载</a>
 				</blockquote>
+			<% 		}%>
 			</div>
-			<%
-				}
+			<div class="tab-pane" id="tab3">
+			<%for (Resource res : listRes) 
 					if (res.getResType().equals("other")) {
 			%>
-			<div class="tab-pane" id="tab3">
 				<blockquote>
 					<span class="STYLE2"><%=res.getResName()%></span></br> </span><%=res.getResDescribe()%></span>
 					<div align="right">
 						<a type="button" href="界面.rar" style="colorL:red;">下载</a>
 				</blockquote>
+				<%
+					}
+				%>
 			</div>
-			<%
-				}
-				}
-			%>
 		</div>
 	</div>
 	</div>
@@ -119,7 +119,7 @@
 	<p>&nbsp;</p>
 	<div align="center">
 		<button type="button" class="btn-primary">关闭窗口</button>
-		
+
 	</div>
 
 
