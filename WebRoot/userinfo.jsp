@@ -62,9 +62,9 @@
 			document.getElementById('STYLE13').style.display = "none";
 			document.getElementById('STYLE14').style.display = "";
 			document.getElementById('STYLE15').style.display = "none";
-			//	document.getElementById('STYLE16').style.display = "";
+			document.getElementById('STYLE16').style.display = "";
 			document.getElementById('STYLE17').style.display = "none";
-			//	document.getElementById('STYLE18').style.display = "";
+			document.getElementById('STYLE18').style.display = "";
 		}
 			break;
 		case 3: {
@@ -142,19 +142,18 @@ div.margin {
 </style>
 </head>
 <%
-	String permi = (String) request.getAttribute("permi");
-	System.out.print(permi);
-	int i = 3;
-	/*if (permi != null) {
+	String permi = (String) request.getSession().getAttribute("permi");
+
+	int i = -1;
+	if (permi != null) {
 		i = Integer.parseInt(permi);
 		if (i == 0) {
 			i = 1;
 		}
-	}*/
-//	out.print("<body onload=\"fun(\'" + i + "\');\">");
-	
+	}
+	out.print("<body onload=\"fun(" + i + ");\">");
 %>
-<body onload="fun(1)">
+
 
 <div class="container">
 	<h1 class="page-header">我的个人信息</h1>
@@ -173,15 +172,15 @@ div.margin {
 		<div align="right" class="margin STYLE1" id="STYLE9">联系方式：</div>
 	</div>
 	<div id="yourdiv">
-		<div align="left" class="margin STYLE1" id="STYLE10"><%=request.getAttribute("name")%></div>
-		<div align="left" class="margin STYLE1" id="STYLE11"><%=request.getAttribute("id")%></div>
-		<div align="left" class="margin STYLE1" id="STYLE12"><%=request.getAttribute("id")%></div>
-		<div align="left" class="margin STYLE1" id="STYLE13"><%=request.getAttribute("id")%></div>
-		<div align="left" class="margin STYLE1" id="STYLE14"><%=request.getAttribute("sex")%></div>
-		<div align="left" class="margin STYLE1" id="STYLE15"><%=request.getAttribute("major")%></div>
-		<div align="left" class="margin STYLE1" id="STYLE16"><%=request.getAttribute("academy")%></div>
-		<div align="left" class="margin STYLE1" id="STYLE17"><%=request.getAttribute("class")%></div>
-		<div align="left" class="margin STYLE1" id="STYLE18"><%=request.getAttribute("cont")%></div>
+		<div align="left" class="margin STYLE1" id="STYLE10"><%=request.getSession().getAttribute("name")%></div>
+		<div align="left" class="margin STYLE1" id="STYLE11"><%=request.getSession().getAttribute("id")%></div>
+		<div align="left" class="margin STYLE1" id="STYLE12"><%=request.getSession().getAttribute("id")%></div>
+		<div align="left" class="margin STYLE1" id="STYLE13"><%=request.getSession().getAttribute("id")%></div>
+		<div align="left" class="margin STYLE1" id="STYLE14"><%=request.getSession().getAttribute("sex")%></div>
+		<div align="left" class="margin STYLE1" id="STYLE15"><%=request.getSession().getAttribute("major")%></div>
+		<div align="left" class="margin STYLE1" id="STYLE16"><%=request.getSession().getAttribute("academy")%></div>
+		<div align="left" class="margin STYLE1" id="STYLE17"><%=request.getSession().getAttribute("class")%></div>
+		<div align="left" class="margin STYLE1" id="STYLE18"><%=request.getSession().getAttribute("cont")%></div>
 	</div>
 </div>
 <div id="close">

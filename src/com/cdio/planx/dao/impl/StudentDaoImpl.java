@@ -50,6 +50,9 @@ public class StudentDaoImpl implements StudentDao {
 			}
 		} catch (SQLException e) {
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(rs, stmt, conn);
 		}
 		
 		return listStudents;
@@ -80,6 +83,9 @@ public class StudentDaoImpl implements StudentDao {
 			
 		} catch (SQLException e) {
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(null, ps, conn);
 		}
 		return i;
 	}
@@ -98,6 +104,9 @@ public class StudentDaoImpl implements StudentDao {
 			
 		} catch (SQLException e) {
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(null, stmt, conn);
 		}
 		return i;
 	}
@@ -124,6 +133,9 @@ public class StudentDaoImpl implements StudentDao {
 			
 		} catch (SQLException e) {
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(null, ps, conn);
 		}
 		
 		return i;
@@ -142,6 +154,9 @@ public class StudentDaoImpl implements StudentDao {
 			i=ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(null, ps, conn);
 		}
 		return i;
 	}
@@ -174,6 +189,9 @@ public class StudentDaoImpl implements StudentDao {
 		}catch(SQLException e){
 			throw new PersonInfoException("");
 			
+		}finally{
+			
+			DbConn.free(rs, ps, conn);
 		}
 		
 		return stu;

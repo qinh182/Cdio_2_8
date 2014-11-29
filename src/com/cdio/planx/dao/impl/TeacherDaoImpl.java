@@ -47,6 +47,9 @@ public class TeacherDaoImpl implements TeacherDao {
 			}
 		} catch (SQLException e) {
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(rs, stmt, conn);
 		}
 		return listTeachers;
 	}
@@ -71,6 +74,9 @@ public class TeacherDaoImpl implements TeacherDao {
 			
 		} catch (SQLException e) {
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(null, ps, conn);
 		}
 		return i;
 	}
@@ -90,6 +96,9 @@ public class TeacherDaoImpl implements TeacherDao {
 			
 		} catch (SQLException e) {
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(rs, stmt, conn);
 		}
 		return i;
 	}
@@ -112,6 +121,9 @@ public class TeacherDaoImpl implements TeacherDao {
 			i=ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(null, ps, conn);
 		}
 		
 		return i;
@@ -130,6 +142,9 @@ public class TeacherDaoImpl implements TeacherDao {
 			i=ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(null, ps, conn);
 		}
 		return i;
 	}
@@ -159,6 +174,9 @@ public class TeacherDaoImpl implements TeacherDao {
 			
 		}catch(SQLException e){
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(rs, ps, conn);
 		}
 		
 		

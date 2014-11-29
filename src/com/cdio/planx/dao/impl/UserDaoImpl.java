@@ -54,6 +54,9 @@ public class UserDaoImpl implements UserDao {
 		}catch(SQLException e){
 			throw new PersonInfoException("");
 			
+		}finally{
+			
+			DbConn.free(rs, ps, conn);
 		}
 		
 		
@@ -87,6 +90,9 @@ public class UserDaoImpl implements UserDao {
 			}	
 		}catch(SQLException e){
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(rs, ps, conn);
 		}
 		return tea;
 	}
@@ -117,6 +123,9 @@ public class UserDaoImpl implements UserDao {
 			}	
 		}catch(SQLException e){
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(rs, ps, conn);
 		}
 		
 		return hTea;
@@ -145,6 +154,9 @@ public class UserDaoImpl implements UserDao {
 			}	
 		}catch(SQLException e){
 			throw new PersonInfoException("");
+		}finally{
+			
+			DbConn.free(rs, ps, conn);
 		}
 		return admin;
 	}
