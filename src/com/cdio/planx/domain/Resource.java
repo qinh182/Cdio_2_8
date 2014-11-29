@@ -33,6 +33,23 @@ public class Resource {
 	/**资源附件*/
 	private String resFile;
 
+	/**资源图片*/
+	private String resPic;
+	
+	/**
+	 * @return the resImg
+	 */
+	public String getResPic() {
+		return resPic;
+	}
+
+	/**
+	 * @param resImg the resImg to set
+	 */
+	public void setResPic(String resPic) {
+		this.resPic = resPic;
+	}
+
 	/**
 	 * @return the resID
 	 */

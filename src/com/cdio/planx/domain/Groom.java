@@ -21,7 +21,6 @@ public class Groom {
 	/**推荐图片*/
 	private String groomPic;
 	
-	
 	/**推荐简介*/
 	private String groomBrief;
 	

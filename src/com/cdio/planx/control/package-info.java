@@ -5,4 +5,4 @@
  * @author Administrator
  *
  */
-package com.cdio.plax.control;
+package com.cdio.planx.control;
