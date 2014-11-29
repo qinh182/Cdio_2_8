@@ -42,8 +42,8 @@ public class LoginServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession session = request.getSession();
-		String userID = request.getParameter("userID").trim();
-		String userPw = request.getParameter("userPw").trim();
+		String userID = request.getParameter("username").trim();
+		String userPw = request.getParameter("password").trim();
 		String userPermi = request.getParameter("userPermi").trim();
 		session.setAttribute("id", userID);
 		session.setAttribute("permi", userPermi);
@@ -102,7 +102,7 @@ public class LoginServlet extends HttpServlet {
 				
 			}
 
-			response.sendRedirect("userinfo.jsp");
+			response.sendRedirect("mainmenu.jsp");
 		}
 
 	}

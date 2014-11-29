@@ -11,29 +11,22 @@
 		<servlet-class>com.cdio.planx.control.LoginServlet</servlet-class>
 	</servlet>
 
-	<servlet>
-		<servlet-name>mainmenu</servlet-name>
-		<servlet-class>mainmenu</servlet-class>
-	</servlet>
 
 
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>mainmenu</servlet-name>
-		<url-pattern>/servlet/mainmenu</url-pattern>
-	</servlet-mapping>
-<!-- 
+
+<!--  
 	<filter>
 		<filter-name>loginfilter</filter-name>
-		<filter-class>com.cdio.planx.filte.LoginFilterr</filter-class>
+		<filter-class>com.cdio.planx.filter.LoginFilter</filter-class>
 	</filter>
 
 	<filter-mapping>
 		<filter-name>loginfilter</filter-name>
-		<url-pattern>/jsp/userinfo.jsp</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</filter-mapping>
  -->
 </web-app>

@@ -119,8 +119,7 @@
 	<p>&nbsp;</p>
 	<div align="center">
 		<button type="button" class="btn-primary">关闭窗口</button>
-		<script src="bootstrap/bootstrap/js/jquery-2.1.1.min.js"></script>
-		<script src="bootstrap/bootstrap/js/bootstrap.js"></script>
+		
 	</div>
 
 
