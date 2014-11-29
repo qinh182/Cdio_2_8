@@ -33,6 +33,18 @@
 	top: 166px;
 }
 
+.div-a {
+	float: left;
+	width: 49%;
+	border: 1px solid #F00
+}
+
+.div-b {
+	float: left;
+	width: 49%;
+	border: 1px solid #000
+}
+
 #div1 {
 	width: 280px;
 	height: 300px;
@@ -283,9 +295,6 @@ body {
 	}
 }
 </style>
-
-</head>
-
 <body class="home-template">
 	<div class="container">
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -304,7 +313,7 @@ body {
 						<li><a href="#">问题解答</a></li>
 						<li><a href="userinfo.jsp">个人信息</a></li>
 						<li><a href="#">班主任信箱</a></li>
-						<li><a href="#">注销</a></li>
+						<li><a href="login.jsp">注销</a></li>
 					</ul>
 					<ul class="nav pull-right">
 					</ul>
@@ -329,132 +338,151 @@ body {
 		<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
 	</div>
 	<!-- /.carousel -->
+
 	<div class="container">
-		<div class="margin:0 auto">
-			<h2>
-				<strong>XX社区快速入</strong>口
-			</h2>
-			<p>马上进入热门来先睹为快吧</p>
-		</div>
-		<div style="border:1px solid black; height:1000px;">
-			<div style="border:1px solid black;margin:0 auto">
-				<h2>
-					<strong>热门通知</strong>
-				</h2>
-				<p>
-					<a class="btn btn btn-warning" href="#">更多 &raquo;</a>
-				</p>
-			</div>
-			<blockquote>
-				<p>第一条 为充分调动学生学习的积极性和主动性，提升人才培养质量，根据教育部《普通高等学校学生管理规定》（教
-					育部令第21，特制定本办法。第二条 转专业应遵循的基本原则。</p>
-				<small>来自<city>XXX</city></small>
-			</blockquote>
-			<blockquote>
-				<p>第一条 为充分调动学生学习的积极性和主动性，提升人才培养质量，根据教育部《普通高等学校学生管理规定》（教
-					育部令第21，特制定本办法。第二条 转专业应遵循的基本原则。</p>
-				<small>来自<city>XXX</city></small>
-			</blockquote>
-		</div>
-	</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="20" height="26" align="center" valign="middle"><img
+					src="/Cdio_2_8/bootstrap/img/u=4218969855,3478798194&fm=21&gp=0.jpg"></td>
+				<td class="biaoti1"><span id="sdyw_title">近期比赛</span></td>
+				<td width="72">
+					<div id="sdyw_more">
+						<div align=right>
+							<a href="/s/2/t/250/p/3/list.htm" target="_self">更多>>></a>
+						</div>
+					</div>
+					<div id="mtsd_more" class="hide">
+						<div align=right>
+							<a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0"
+			bgcolor="#b42505">
+			<tr>
+				<td width="280" height="2" bgcolor="#013765"></td>
+				<td width="160" bgcolor="#b42505"></td>
+			</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="100" valign="top">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td height="3"></td>
+						</tr>
+					</table>
 
+					<div id="sdyw">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="16"><img
+									src="/Cdio_2_8/bootstrap/img/u=3470060291,1643827491&fm=21&gp=0.jpg"></td>
+								<td><table width=100% cellpadding=0 cellspacing=0 border=0>
+										<tr>
+											<td align=left><a href='/s/2/t/250/53/78/info86904.htm'
+												target=_blank title="我校学生在第七届华南高校地理科学展示大赛中获佳绩">我校学生在第七届华南高校地理科学展示大赛中获佳绩</a></td>
+											<td width='50' align=left><div
+													style='white-space:nowrap'>2014-11-27</div></td>
+											<td width='30' align=right><div
+													style='white-space:nowrap'>
+													<img src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png">
+												</div></td>
+										</tr>
+									</table></td>
+							</tr>
+							<tr>
+								<td height="1" colspan="2" background=background="../bootstrap/bootstrap/img/5-120601152046-50.png"></td>
+							</tr>
+						</table>
+					</div>
 
-	<!-- Marketing messaging and featurettes
-    ================================================== -->
-	<!-- Wrap the rest of the page in another container to center all the content. -->
+					<div class="row" style="border:1px solid black;">
 
-	<div class="container marketing">
+						<div class="container span6 div-a" style="border:1px solid red;">
 
-		<!-- Three columns of text below the carousel -->
+							<div class="container span6">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="20" height="26" align="center" valign="middle"><img
+											src="/Cdio_2_8/bootstrap/img/44692044311.jpg"></td>
+										<td class="biaoti1"><span id="sdyw_title">最新问答</span></td>
 
-		<div class="row"></div>
-		<div class="row">
+										<td width="72">
+											<div id="sdyw_more">
+												<div align=right>
+													<a href="/s/2/t/250/p/3/list.htm" target="_self">更多>>></a>
+												</div>
+											</div>
+											<div id="mtsd_more" class="hide">
+												<div align=right>
+													<a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</table>
 
-			<div class="span4" style="border: 1px solid black;margin:0 auto">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0"
+									bgcolor="#b42505">
+									<tr>
+										<td width="280" height="2" bgcolor="#013765"></td>
+										<td width="160" bgcolor="#b42505"></td>
+									</tr>
+								</table>
 
-				<div style=" border: 1px solid black; background-color:#06C">
-					<h2>
-						<strong>热门资讯</strong>
-					</h2>
-				</div>
-				<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
-					euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
-					Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-					Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-				<div style="border: 1px solid black;">
-
-					<p>
-						<a class="btn btn-primary" href="#">更多 &raquo;</a>
-					</p>
-				</div>
-			</div>
-			<!-- /.span4 -->
-
-			<div class="span4" style="border: 1px solid black;margin:0 auto">
-
-				<div style="border: 1px solid black; background:#FF0">
-					<h2>
-						<strong>热门资源</strong>
-					</h2>
-				</div>
-				<p>Duis mollis, est non commodo luctus, nisi erat porttitor
-					ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
-					purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
-					tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-					risus.</p>
-				<div style="border: 1px solid black;">
-					<p>
-						<a class="btn btn btn-warning" href="#">更多 &raquo;</a>
-					</p>
-				</div>
-			</div>
-			<!-- /.span4 -->
-			<div class="span4" style="border: 1px solid black;margin:0 auto">
-
-				<div style="border: 1px solid black; background:#F00">
-					<h2>
-						<strong>热门问答</strong>
-					</h2>
-				</div>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-					egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-					nibh, ut fermentum massa justo sit amet risus.</p>
-				<div style="border: 1px solid black;">
-					<p>
-						<a class="btn btn btn-danger" href="#">更多 &raquo;</a>
-					</p>
-				</div>
-			</div>
-			<!-- /.span4 -->
-		</div>
-		<!-- /.row -->
-
-
-
-
-		<!-- FOOTER -->
-		<footer>
-		<p class="pull-right">
-			<a href="#">Back to top</a>
-		</p>
-		<p>
-			&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a
-				href="#">Terms</a>
-		</p>
-		</footer>
-
-	</div>
-	<!-- /.container -->
-
-	<script>
-		!function($) {
-			$(function() {
-				// carousel demo
-				$('#myCarousel').carousel()
-			})
-		}(window.jQuery)
-	</script>
-
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td height="100" valign="top">
+											<table width="100%" border="0" cellspacing="0"
+												cellpadding="0">
+												<tr>
+													<td height="3"></td>
+												</tr>
+											</table>
+											<div id="sdyw">
+												<table width="100%" border="0" cellpadding="0"
+													cellspacing="0">
+													<tr>
+														<td width="16"><img
+															src="/Cdio_2_8/bootstrap/img/u=3470060291,1643827491&fm=21&gp=0.jpg"></td>
+														<td><table width=100% cellpadding=0 cellspacing=0
+																border=0>
+																<tr>
+																	<td align=left><a
+																		href='/s/2/t/250/53/78/info86904.htm' target=_blank
+																		title="我校学生在第七届华南高校地理科学展示大赛中获佳绩">我校学生在第七届华南高校地理科学展示大赛中获佳绩</a></td>
+																	<td width='50' align=left><div
+																			style='white-space:nowrap'>2014-11-27</div></td>
+																	<td width='30' align=right><div
+																			style='white-space:nowrap'>
+																			<img
+																				src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png">
+																		</div></td>
+																</tr>
+															</table></td>
+													</tr>
+													<tr>
+														<td height="1" colspan="2" background=background="../bootstrap/bootstrap/img/5-120601152046-50.png"></td>
+													</tr>
+												</table>
+								</table>
+							</div>
+							<div class="container span6"></div>
+						</div>
+						<div class="div-b"
+							style="border: 1px solid red; width:100px;height:100px;">
+							<label>dddd</label>
+						</div>
+						<script>
+							!function($) {
+								$(function() {
+									// carousel demo
+									$('#myCarousel').carousel()
+								})
+							}(window.jQuery)
+						</script>
 </body>
 </html>
