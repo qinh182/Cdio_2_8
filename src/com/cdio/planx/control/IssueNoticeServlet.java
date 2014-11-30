@@ -18,13 +18,17 @@ public class IssueNoticeServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
-	 *
+	 * 
 	 * This method is called when a form has its tag value method equals to get.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -39,39 +43,51 @@ public class IssueNoticeServlet extends HttpServlet {
 		out.println("  <BODY><h2>");
 		String noticeContent = request.getParameter("noticeContent").trim();
 		Notice notice = new Notice();
+		notice.setNoticeID(session.getAttribute("listNoticeSize").toString());
 		notice.setNoticeAcademy(session.getAttribute("academy").toString());
 		notice.setNoticeAuthor(session.getAttribute("name").toString());
 		notice.setNoticeClass(session.getAttribute("class").toString());
 		notice.setNoticeContent(noticeContent);
 		notice.setNoticeDate(new Date());
 		notice.setNoticeGrade(session.getAttribute("grade").toString());
-		notice.setNoticePermi(Integer.parseInt(session.getAttribute("permi").toString()));
-		
+		notice.setNoticePermi(Integer.parseInt(session.getAttribute("permi")
+				.toString()));
+
 		NoticeDao nd = new NoticeDaoImpl();
-		if(nd.addNotice(notice)==0)
+		if (nd.addNotice(notice) == 0)
 			out.print("发布失败！现返回主页面...");
 		else
 			out.print("发布成功！现返回主页面...");
 		out.println("</h2>  </BODY>");
 		out.println("</HTML>");
-		out.flush();
-		out.close();
+		try {
+			response.sendRedirect("mainmenu.jsp");
+		} finally {
+			out.flush();
+			out.close();
+		}
+
 	}
 
 	/**
 	 * The doPost method of the servlet. <br>
-	 *
-	 * This method is called when a form has its tag value method equals to post.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * This method is called when a form has its tag value method equals to
+	 * post.
+	 * 
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		doGet(request,response);
+		doGet(request, response);
 	}
 
 }

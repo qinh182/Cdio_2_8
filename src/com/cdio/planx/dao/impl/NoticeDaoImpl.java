@@ -1,7 +1,6 @@
 package com.cdio.planx.dao.impl;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -36,7 +35,7 @@ public class NoticeDaoImpl implements NoticeDao {
 				notice.setNoticeAuthor(rs.getString("noticeAuthor"));
 				notice.setNoticeContent(rs.getString("noticeContent"));
 				notice.setNoticeDate(rs.getDate("noticeDate"));
-				notice.setNoticeID(rs.getString("noticeID"));
+				notice.setNoticeID(String.valueOf(Integer.parseInt(rs.getString("noticeID"))+1));
 				notice.setNoticePermi(rs.getInt("noticePermi"));
 				notice.setNoticeAcademy(rs.getString("noticeAcademy"));
 				notice.setNoticeClass(rs.getString("noticeClass"));
@@ -60,18 +59,18 @@ public class NoticeDaoImpl implements NoticeDao {
 		try {
 			conn = DbConn.getConn();
 			ps = conn.prepareStatement(sql);
-			ps.setString(1,notice.getNoticeID());
-			ps.setString(2,notice.getNoticeContent());
-			ps.setDate(3, (Date) notice.getNoticeDate());
-			ps.setString(4,notice.getNoticeAuthor());
-			ps.setInt(5,notice.getNoticePermi());
-			ps.setString(6,notice.getNoticeClass());
-			ps.setString(7,notice.getNoticeGrade());
-			ps.setString(8,notice.getNoticeAcademy());
+			ps.setString(1, notice.getNoticeID());
+			ps.setString(2, notice.getNoticeContent());
+			ps.setDate(3, new java.sql.Date(notice.getNoticeDate().getTime()));
+			ps.setString(4, notice.getNoticeAuthor());
+			ps.setInt(5, notice.getNoticePermi());
+			ps.setString(6, notice.getNoticeClass());
+			ps.setString(7, notice.getNoticeGrade());
+			ps.setString(8, notice.getNoticeAcademy());
 			i = ps.executeUpdate();
-			
+
 		} catch (SQLException e) {
-			throw new PersonInfoException("");
+		//	throw new AnnounceInfoException("");
 		} finally {
 
 			DbConn.free(null, ps, conn);

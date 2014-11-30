@@ -38,6 +38,7 @@ public class NoticeServlet extends HttpServlet {
 		String noticeAcademy = (String) session.getAttribute("academy");
 		NoticeDao nd = new NoticeDaoImpl();
 		List<Notice> listNotice = nd.listNotice(noticeAcademy);
+		session.setAttribute("listNoticeSize",listNotice.size() );
 		request.setAttribute("listNotice", listNotice);
 		request.getRequestDispatcher("notice.jsp").forward(request, response);
 	}
