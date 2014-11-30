@@ -1,25 +1,28 @@
-<%@page import="com.cdio.planx.domain.Notice"%>
-<%@page import="com.cdio.planx.dao.impl.NoticeDaoImpl"%>
-<%@page import="com.cdio.planx.dao.NoticeDao"%>
+<%@page import="com.cdio.planx.domain.Competition"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@page import="com.cdio.planx.*"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
-
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+<base href="<%=basePath%>">
 
-
-<title>My JSP 'notice.jsp' starting page</title>
+<title>My JSP 'competition.jsp' starting page</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-
+<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
 <link
 	href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css"
 	rel="stylesheet" type="text/css">
@@ -301,7 +304,9 @@ body {
 }
 </style>
 </head>
+
 <body>
+
 	<div class="container">
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
@@ -312,8 +317,8 @@ body {
 				<div class="nav-collapse">
 					<ul class="nav nav-collapse">
 						<li><a href="#">首页</a></li>
-						<li class="active"><a href="#">通知详情</a></li>
-						<li><a href="#">比赛资讯</a></li>
+						<li><a href="#">通知详情</a></li>
+						<li class="active"><a href="#">比赛资讯</a></li>
 						<li><a href="#">资源下载</a></li>
 						<li><a href="#">书影推荐</a></li>
 						<li><a href="#">问题解答</a></li>
@@ -327,134 +332,147 @@ body {
 			</div>
 		</div>
 	</div>
+
 	<div id="myCarousel" class="carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
 
-				<img src="/Cdio_2_8/bootstrap/img/201331894734107.jpg">
+				<img src="/Cdio_2_8/bootstrap/img/u=3039055028,2348210863&fm=56.jpg">
 			</div>
+
 		</div>
+
 	</div>
 	<!-- /.carousel -->
+
 	<div class="container">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="20" height="26" align="center" valign="middle"><img
+					src="/Cdio_2_8/bootstrap/img/u=4218969855,3478798194&fm=21&gp=0.jpg"></td>
+				<td class="biaoti1"><span id="sdyw_title"><strong>比赛资讯</strong></span>
 
-		<ul class="nav nav-pills">
-			<li class="active"><a href="#tab1" data-toggle="tab">全部</a></li>
-			<li><a href="#tab2" data-toggle="tab">教师</a></li>
-			<li><a href="#tab3" data-toggle="tab">班主任</a></li>
-			<li><a href="#tab4" data-toggle="tab">班干部</a></li>
-		</ul>
-		<div class="tab-content hero-unit" style="border:5px solid  #FCF;">
-			<div class="tab-pane active" id="tab1">
-				<%
-					List<Notice> listNotice = (ArrayList<Notice>)request.getAttribute("listNotice");
-					int i = 0;
-					if(listNotice!=null)
-					for (Notice notice : listNotice) {
-						if (i++ < 5) {
-				%>
-				<p>
-				<blockquote>
-					<p>
-						<strong><%=notice.getNoticeContent()%> </strong>
-					</p>
-					<strong> <small>来自 <city><%=notice.getNoticeAuthor() %></city>
-					</small>
-					</strong>
-				</blockquote>
-				</p>
-				<%
-					}
-					}
-				%>
-
-
-			</div>
-			<div class="tab-pane " id="tab2">
-				<%
-					int j=0;
-					if(listNotice!=null)
-					for (Notice notice : listNotice)
-						if (notice.getNoticePermi()==2&&j++<3) {
-				%>
-				<blockquote>
-					<p>
-						<strong><%=notice.getNoticeContent()%></strong>
-					</p>
-					<strong><small>来自 <city><%=notice.getNoticeAuthor() %></city>
-					</small></strong>
-				</blockquote>
-				<%
-					}
-				%>
-			</div>
-			<div class="tab-pane" id="tab3">
-				<%
-					int z=0;
-					if(listNotice!=null)
-					for (Notice notice : listNotice)
-						if (notice.getNoticePermi()==3&&z++<3) {
-						
-				%>
-				<blockquote>
-					<p>
-						<strong><%=notice.getNoticeContent()%></strong>
-					</p>
-					<strong><small>来自 <city><%=notice.getNoticeAuthor() %></city>
-					</small></strong>
-				</blockquote>
-				<%
-					}
-				%>
-			</div>
-			<div class="tab-pane" id="tab4">
-				<%
-					int x = 0;
-					if(listNotice!=null)
-					for (Notice notice : listNotice)
-						if (notice.getNoticePermi()==1&&x++<3) {
-						
-				%>
-				<blockquote>
-					<p>
-						<strong><%=notice.getNoticeContent()%></strong>
-					</p>
-					<strong><small>来自 <city><%=notice.getNoticeAuthor() %></city>
-					</small></strong>
-				</blockquote>
-				<%
-					}
-				%>
-			</div>
-		</div>
-
-		<a href="#SubmitNotice" data-toggle="modal" class="btn btn-primary">发布通知</a>
-
-		<div class="modal hide" id="SubmitNotice">
-			<a href="#" class="close" data-dismiss="modal">×</a>
-			<div class="page-header">
-				<div class="span4">
-					<h4 class="pull-left">发布通知</h4>
-				</div>
-			</div>
-			<div class="modal-body">
-				<form class="form-horizontal"action="issuenotice"method="post">
-					<div>
-						<div class="control-group">
-							<label class="control-label">通知内容：</label>
-							<div class="controls">
-								<textarea class="form-control" rows="5" name="noticeContent"></textarea>
-							</div>
+				</td>
+				<td width="72">
+					<div id="sdyw_more">
+						<div align=right>
+							<a href="/s/2/t/250/p/3/list.htm" target="_self">更多>>></a>
 						</div>
 					</div>
-			<div class="modal-footer">
-				<button type="submit" class="btn btn-primary">发表</button>
-			</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	</div>
-	</bo
-				dy>
+					<div id="mtsd_more" class="hide">
+						<div align=right>
+							<a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0"
+			bgcolor="#b42505">
+			<tr>
+				<td width="280" height="2" bgcolor="#013765"></td>
+				<td width="160" bgcolor="#b42505"></td>
+			</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="100" valign="top">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td height="3"></td>
+						</tr>
+					</table> <%
+ 	List<Competition> listCompe = (ArrayList<Competition>) request
+ 			.getAttribute("listCompe");
+ 	if (listCompe != null)
+ 		for (Competition competition : listCompe) {
+ %>
+					<div id="sdyw">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="16"><img
+									src="/Cdio_2_8/bootstrap/img/u=3470060291,1643827491&fm=21&gp=0.jpg"></td>
+								<td><table width=100% cellpadding=0 cellspacing=0 border=0>
+										<tr>
+											<td align=left><a href='/s/2/t/250/53/78/info86904.htm'
+												target=_blank title="654165"><%=competition.getCompetitionTitle()%></a></td>
+											<td width='50' align=left><div
+													style='white-space:nowrap'><%=competition.getCompetitionDate()%></div></td>
+											<td width='30' align=right><div
+													style='white-space:nowrap'>
+													<img src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png">
+												</div></td>
+										</tr>
+									</table></td>
+							</tr>
+							<tr>
+								<td height="1" colspan="2" background=background="../bootstrap/bootstrap/img/5-120601152046-50.png"></td>
+							</tr>
+
+
+						</TABLE>
+					</div> <%
+ 	}
+ %>
+					</div> <a href="#SubmitCompetition" data-toggle="modal"
+					class="btn btn-primary">发布资讯</a>
+
+					<div class="modal hide" id="SubmitCompetition">
+						<a href="#" class="close" data-dismiss="modal">×</a>
+						<div class="page-header">
+							<div class="span4">
+								<h4 class="pull-left">发布资讯</h4>
+							</div>
+						</div>
+						<div class="modal-body">
+							<form class="form-horizontal">
+								<div>
+									<div class="control-group">
+										<label class="control-label">资讯标题</label>
+										<div class="controls">
+											<input type="text" placeholder="输入您的标题名" class="span3">
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="control-group">
+										<label class="control-label">资讯内容</label>
+										<div class="controls">
+											<textarea class="form-horizontal" rows="8" cols="20"></textarea>
+										</div>
+									</div>
+								</div>
+
+
+							</form>
+						</div>
+						<div class="modal-footer">
+							<form class="form-horizontal">
+								<div class="span4">
+									<div class="control-group">
+										<label class="control-label">名称</label>
+										<div class="controls">
+											<input type="text" placeholder="输入您的文件名" class="span3">
+										</div>
+									</div>
+								</div>
+
+								<button type="button" class="btn btn-primary">发表</button>
+								<div class="span4">
+									<div class="control-group">
+										<label class="control-label">文件传输</label>
+										<div class="controls">
+											<input type="file" id="inputfile">
+										</div>
+									</div>
+								</div>
+						</div>
+
+						</form>
+					</div>
+
+
+					</div>
+					</div>
+</body>
 </html>

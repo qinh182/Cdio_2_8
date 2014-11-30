@@ -9,11 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.cdio.planx.dao.NoticeDao;
+import com.cdio.planx.dao.CompetitionDao;
+import com.cdio.planx.dao.impl.CompetitionDaoImpl;
 import com.cdio.planx.dao.impl.NoticeDaoImpl;
-import com.cdio.planx.domain.Notice;
+import com.cdio.planx.domain.Competition;
 
-public class NoticeServlet extends HttpServlet {
+public class CompetitionServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -31,16 +32,14 @@ public class NoticeServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession session = request.getSession();
-		String noticeAcademy = (String) session.getAttribute("academy");
-		NoticeDao nd = new NoticeDaoImpl();
-		List<Notice> listNotice = nd.listNotice(noticeAcademy);
-		session.setAttribute("listNoticeSize",NoticeDaoImpl.NOTICE_NUM+1 );
-		request.setAttribute("listNotice", listNotice);
-		request.getRequestDispatcher("notice.jsp").forward(request, response);
+		CompetitionDao cd = new CompetitionDaoImpl();
+		List<Competition> listCompe = cd.listCompe();
+		session.setAttribute("listCompeSize",listCompe.size());
+		request.setAttribute("listCompe", listCompe);
+		request.getRequestDispatcher("competition.jsp").forward(request, response);
 	}
 
 	/**

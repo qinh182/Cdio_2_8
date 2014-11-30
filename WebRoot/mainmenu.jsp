@@ -306,7 +306,7 @@ body {
 <ul class="nav nav-collapse">
 <li class="active"><a href="#">首页</a></li>
 <li ><a href="notice">通知详情</a></li>
-<li ><a href="#">比赛资讯</a></li>
+<li ><a href="competition">比赛资讯</a></li>
 <li ><a href="#">资源下载</a></li>
 <li ><a href="#">书影推荐</a></li>
 <li ><a href="#">问题解答</a></li>

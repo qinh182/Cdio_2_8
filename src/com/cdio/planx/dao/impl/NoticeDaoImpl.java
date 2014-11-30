@@ -16,26 +16,28 @@ import com.cdio.planx.utils.DbConn;
 
 public class NoticeDaoImpl implements NoticeDao {
 
+	public static int NOTICE_NUM;
 	@Override
 	public List<Notice> listNotice(String noticeAcademy) {
+		NOTICE_NUM = 0;
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 		List<Notice> lsitNotice = new ArrayList<Notice>();
 		String sql = "select * from Notice";
-
 		try {
 			conn = DbConn.getConn();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
+				NOTICE_NUM++;
 				if (!rs.getString("noticeAcademy").equals(noticeAcademy))
 					continue;
 				Notice notice = new Notice();
 				notice.setNoticeAuthor(rs.getString("noticeAuthor"));
 				notice.setNoticeContent(rs.getString("noticeContent"));
 				notice.setNoticeDate(rs.getDate("noticeDate"));
-				notice.setNoticeID(String.valueOf(Integer.parseInt(rs.getString("noticeID"))+1));
+				notice.setNoticeID(rs.getString("noticeID"));
 				notice.setNoticePermi(rs.getInt("noticePermi"));
 				notice.setNoticeAcademy(rs.getString("noticeAcademy"));
 				notice.setNoticeClass(rs.getString("noticeClass"));
