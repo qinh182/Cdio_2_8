@@ -25,14 +25,65 @@ public class Notice {
 	/**通知作者*/
 	private String noticeAuthor;
 	
-	/**通知作者*/
-	private String noticePermi;
+	/**通知作者权限*/
+	private int noticePermi;
+	
+	/**通知学院*/
+	private String noticeAcademy;
+	
+	/**通知班级*/
+	private String noticeClass;
+	
+	/**通知年级*/
+	private String noticeGrade;
 
 	/**
 	 * @return the noticeID
 	 */
 	public String getNoticeID() {
 		return noticeID;
+	}
+
+	/**
+	 * @return the noticeAcademy
+	 */
+	public String getNoticeAcademy() {
+		return noticeAcademy;
+	}
+
+	/**
+	 * @param noticeAcademy the noticeAcademy to set
+	 */
+	public void setNoticeAcademy(String noticeAcademy) {
+		this.noticeAcademy = noticeAcademy;
+	}
+
+	/**
+	 * @return the noticeClass
+	 */
+	public String getNoticeClass() {
+		return noticeClass;
+	}
+
+	/**
+	 * @param noticeClass the noticeClass to set
+	 */
+	public void setNoticeClass(String noticeClass) {
+		this.noticeClass = noticeClass;
+	}
+
+	/**
+	 * @return the noticeGrade
+	 */
+	public String getNoticeGrade() {
+		return noticeGrade;
+	}
+
+	/**
+	 * @param noticeGrade the noticeGrade to set
+	 */
+	public void setNoticeGrade(String noticeGrade) {
+		this.noticeGrade = noticeGrade;
 	}
 
 	/**
@@ -87,14 +138,14 @@ public class Notice {
 	/**
 	 * @return the noticePermi
 	 */
-	public String getNoticePermi() {
+	public int getNoticePermi() {
 		return noticePermi;
 	}
 
 	/**
 	 * @param noticePermi the noticePermi to set
 	 */
-	public void setNoticePermi(String noticePermi) {
+	public void setNoticePermi(int noticePermi) {
 		this.noticePermi = noticePermi;
 	}
 

@@ -11,7 +11,7 @@ import com.cdio.planx.domain.Resource;
 public class MyTest {
 
 	@Test
-	public void testStudentDao() {
+	public void test() {
 	//	Student stu = new Student("123012012168","123456","薛飞","2012","软件学院","软件工程","四班","男",0,"18060613142");
 	//	StudentDao sd= new StudentDaoImpl();
 		
@@ -27,11 +27,14 @@ public class MyTest {
 	//	int i =sd.updateStuInfo(stu);
 		//System.out.println(i);
 		
-		ResourceDao rd = new ResourceDaoImpl();
-		List<Resource> listRes= rd.listRes();
-		System.out.println(listRes.size());
+		//ResourceDao rd = new ResourceDaoImpl();
+		//List<Resource> listRes= rd.listRes();
+		//System.out.println(listRes.size());
 		//for(Resource res:listRes)
 		//	System.out.println(res.getResAuthor());
+		
+		
+		
 	}
 	
 

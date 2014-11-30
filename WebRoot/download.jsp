@@ -100,16 +100,16 @@
 			</form>
 		</div>
 		<div class="modal-footer">
-			<form class="form-inline" role="form">
+			<form class="form-inline" role="form"action="upload">
 				<div class="form-horizontal">
-					<span>名称</span> <input type="text" class="form-control" id="name"
+					<span>名称</span> <input name="filename" class="form-control" id="name"
 						placeholder="请输入名称">
 				</div>
 				<div class="form-group">
 					<span>选择要上传的文件</span> <input name="浏览" type="file">
 				</div>
-			</form>
 			<button type="button" class="btn btn-primary">上传</button>
+			</form>
 		</div>
 	</div>
 	</div>

@@ -125,9 +125,8 @@ p.sign-up {
 
 			<h1 class="form-signin-heading">Please Login</h1>
 			<center>
-				<input type="text" class="form-control" name="username"
-					placeholder="请输入用户名" required autofocus /> <input type="password"
-					class="form-control" name="password" placeholder="请输入密码" required />
+				<input type="text" class="form-control" name="username"	placeholder="请输入用户名" required autofocus /> 
+				<input type="password"class="form-control" name="password" placeholder="请输入密码" required autofocus/>
 				<select class="selectpicker" data-style="btn-primary"
 					name="userPermi">
 					<option value=" ">请选择您的身份</option>

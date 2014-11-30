@@ -10,6 +10,21 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>com.cdio.planx.control.LoginServlet</servlet-class>
 	</servlet>
+  <servlet>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.cdio.planx.control.UploadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>NoticeServlet</servlet-name>
+    <servlet-class>com.cdio.planx.control.NoticeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>IssueNoticeServlet</servlet-name>
+    <servlet-class>com.cdio.planx.control.IssueNoticeServlet</servlet-class>
+  </servlet>
+
+
+
 
 
 
@@ -17,6 +32,18 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NoticeServlet</servlet-name>
+    <url-pattern>/notice</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IssueNoticeServlet</servlet-name>
+    <url-pattern>/issuenotice</url-pattern>
+  </servlet-mapping>
 
 <!--  
 	<filter>

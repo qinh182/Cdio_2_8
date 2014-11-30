@@ -3,6 +3,9 @@
  */
 package com.cdio.planx.dao.impl;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -14,6 +17,7 @@ import java.util.List;
 
 import com.cdio.planx.dao.ResourceDao;
 import com.cdio.planx.domain.Resource;
+import com.cdio.planx.exception.AnnounceInfoException;
 import com.cdio.planx.exception.PersonInfoException;
 import com.cdio.planx.utils.DbConn;
 
@@ -45,7 +49,7 @@ public class ResourceDaoImpl implements ResourceDao {
 				listRes.add(res);
 			}
 		} catch (SQLException e) {
-			throw new PersonInfoException("");
+			throw new AnnounceInfoException("");
 
 		}
 		return listRes;
@@ -55,6 +59,8 @@ public class ResourceDaoImpl implements ResourceDao {
 	public int addRes(Resource res) {
 		Connection conn = null;
 		PreparedStatement ps=null;
+		File file =null; 
+		FileInputStream fin =null;
 		int i=0;
 		String sql="insert into Resource(resID,resName,resType,resDate,resAuthor,resDescribe,resPic,resFile)values(?,?,?,?,?,?,?,?)";
 		
@@ -67,12 +73,21 @@ public class ResourceDaoImpl implements ResourceDao {
 			ps.setDate(4,(Date) res.getResDate());
 			ps.setString(5,res.getResAuthor());
 			ps.setString(6,res.getResDescribe());
-			ps.setString(7,res.getResPic());
-			ps.setString(8,res.getResFile());
+			file =	new File(res.getResPic());
+			fin = new FileInputStream(file);
+			ps.setBinaryStream(7, fin,file.length());
+			file = new File(res.getResPic());
+			fin = new FileInputStream(file);
+			ps.setBinaryStream(8, fin,file.length());
 			i=ps.executeUpdate();
 			
 		} catch (SQLException e) {
-			throw new PersonInfoException("");
+			throw new AnnounceInfoException("");
+		} catch (FileNotFoundException e) {
+			throw new AnnounceInfoException("");
+		}finally{
+			
+			DbConn.free(null, ps, conn);
 		}
 		
 		
@@ -92,7 +107,7 @@ public class ResourceDaoImpl implements ResourceDao {
 			i=stmt.executeUpdate(sql);
 			
 		} catch (SQLException e) {
-			throw new PersonInfoException("");
+			throw new AnnounceInfoException("");
 		}
 		return i;
 	}
@@ -101,6 +116,12 @@ public class ResourceDaoImpl implements ResourceDao {
 	public int downRes(Resource resID) {
 		
 		return 0;
+	}
+	
+	private void setpath(String path){
+		
+		
+		
 	}
 
 }
