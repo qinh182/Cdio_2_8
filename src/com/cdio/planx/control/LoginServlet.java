@@ -51,13 +51,12 @@ public class LoginServlet extends HttpServlet {
 		request.setAttribute("userPw", userPw);
 		request.setAttribute("userPermi", userPermi);
 
-		if (CdioUtils.isEmptyStr(userID) || CdioUtils.isEmptyStr(userPw)) {
-			request.setAttribute("error", "帐号和密码不能为空！");
+		if (CdioUtils.isEmptyStr(userID) || CdioUtils.isEmptyStr(userPw)|| CdioUtils.isEmptyStr(userPermi)) {
+			request.setAttribute("error", "输入不能为空！");
 			request.getRequestDispatcher("login.jsp")
 					.forward(request, response);
 			return;
 		}
-
 		LoginService ls = new LoginService();
 		User user = new User();
 		user = ls.isLogin(userID, userPw, userPermi);

@@ -109,7 +109,7 @@ p.sign-up {
 	function checkPermi() {
 		with (document.forms["frm"]) {
 			var i = userPermi.options[userPermi.selectedIndex].value;
-			if (i == " ") {
+		if (i=" ") {
 				alert("请选择角色！");
 			}
 		}
@@ -121,7 +121,7 @@ p.sign-up {
 	<div id="fullBg" />
 
 	<div class="container">
-		<form class="form-signin" action="login" method="post">
+		<form class="form-signin" action="login" method="post"name="frm">
 
 			<h1 class="form-signin-heading">Please Login</h1>
 			<center>
@@ -145,12 +145,14 @@ p.sign-up {
 		</p>
 	</div>
 
-	<!-- 
-<%/*	Object message=request.getAttribute("error");
+<%
+Object message=request.getAttribute("error");
 			 if(message!=null){
 			 out.print("<body onload=\"con(\'"+message+"\');\"></body>");
 			 }	
-			 */%>
+		
+			 %>
+	<!-- 
 
 
 
