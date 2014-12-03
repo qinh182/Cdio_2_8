@@ -305,7 +305,7 @@ body {
 				</a> <a class="brand" herf="#">xxx社区</a>
 				<div class="nav-collapse">
 					<ul class="nav nav-collapse">
-						<li class="active"><a href="#">首页</a></li>
+						<li class="active"><a href="mainmenu.jsp">首页</a></li>
 						<li><a href="notice">通知详情</a></li>
 						<li><a href="competition">比赛资讯</a></li>
 						<li><a href="download.jsp">资源下载</a></li>

@@ -316,15 +316,15 @@ body {
 				</a> <a class="brand" herf="#">xxx社区</a>
 				<div class="nav-collapse">
 					<ul class="nav nav-collapse">
-						<li><a href="#">首页</a></li>
-						<li><a href="#">通知详情</a></li>
-						<li class="active"><a href="#">比赛资讯</a></li>
-						<li><a href="#">资源下载</a></li>
-						<li><a href="#">书影推荐</a></li>
+							<li ><a href="mainmenu.jsp">首页</a></li>
+						<li><a href="notice">通知详情</a></li>
+						<li class="active"><a href="competition">比赛资讯</a></li>
+						<li><a href="download.jsp">资源下载</a></li>
+						<li><a href="groom.jsp">书影推荐</a></li>
 						<li><a href="#">问题解答</a></li>
-						<li><a href="#">个人信息</a></li>
+						<li><a href="userinfo.jsp">个人信息</a></li>
 						<li><a href="#">班主任信箱</a></li>
-						<li><a href="#">注销</a></li>
+						<li><a href="login.jsp">注销</a></li>
 					</ul>
 					<ul class="nav pull-right">
 					</ul>
@@ -390,7 +390,7 @@ body {
 									src="/Cdio_2_8/bootstrap/img/u=3470060291,1643827491&fm=21&gp=0.jpg"></td>
 								<td><table width=100% cellpadding=0 cellspacing=0 border=0>
 										<tr>
-											<td align=left><a href='/s/2/t/250/53/78/info86904.htm'
+											<td align=left><a href='detail?competition=<%=competition.getCompetitionID() %>&type=1' 
 												target=_blank title="654165"><%=competition.getCompetitionTitle()%></a></td>
 											<td width='50' align=left><div
 													style='white-space:nowrap'><%=competition.getCompetitionDate()%></div></td>
