@@ -149,6 +149,11 @@ public class Notice {
 		this.noticePermi = noticePermi;
 	}
 
+	public Notice() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	
 
 }

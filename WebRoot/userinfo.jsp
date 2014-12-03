@@ -139,6 +139,10 @@ div.margin {
 .STYLE1 {
 	font-size: 18px
 }
+
+body {
+	background-image: url(${pageContext.request.contextPath}/bootstrap/img/background.jpg);
+}
 </style>
 </head>
 <%
@@ -158,6 +162,7 @@ div.margin {
 <div class="container">
 	<h1 class="page-header">我的个人信息</h1>
 </div>
+<img src="${pageContext.request.contextPath}/bootstrap/img/info.png">
 </br>
 <div id="div">
 	<div id="mydiv">
@@ -183,9 +188,7 @@ div.margin {
 		<div align="left" class="margin STYLE1" id="STYLE18"><%=request.getSession().getAttribute("cont")%></div>
 	</div>
 </div>
-<div id="close">
-	<button type="button" class="btn-primary">关闭窗口</button>
-</div>
+	
 
 </body>
 <br>

@@ -76,7 +76,7 @@ public class CdioUtils {
 	            if(fileName!=null) {
 	                fi.write(new File(filePath + fileName));
 	            }
-	            competition.setCompetitionFile(filePath+fileName);
+	            competition.setCompetitionFile(fileName);
 	        }
 	    }
 	    catch(Exception e) {
@@ -112,7 +112,7 @@ public class CdioUtils {
 	            if(fileName!=null) {
 	                fi.write(new File(filePath + fileName));
 	            }
-	            resource.setResFile(filePath+fileName);
+	            resource.setResFile(fileName);
 	        }
 	    }
 	    catch(Exception e) {

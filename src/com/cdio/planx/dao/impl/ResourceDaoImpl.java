@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cdio.planx.dao.ResourceDao;
+import com.cdio.planx.domain.Notice;
 import com.cdio.planx.domain.Resource;
 import com.cdio.planx.exception.AnnounceInfoException;
 import com.cdio.planx.exception.PersonInfoException;
@@ -46,7 +47,6 @@ public class ResourceDaoImpl implements ResourceDao {
 				res.setResDate(rs.getDate("resDate"));
 				res.setResDescribe(rs.getString("resDescribe"));
 				res.setResID(rs.getString("resID"));
-				res.setResPic(rs.getString("resPic"));
 				res.setResFile(rs.getString("resFile"));
 				res.setResType(rs.getString("resType"));
 				res.setResAuthor("resAuthor");
@@ -65,7 +65,7 @@ public class ResourceDaoImpl implements ResourceDao {
 		PreparedStatement ps=null;
 		int i=0;
 		String num = listRes().size()+"";
-		String sql="insert into Resource(resID,resName,resType,resDate,resAuthor,resDescribe,resPic,resFile)values(?,?,?,?,?,?,?,?)";
+		String sql="insert into Resource(resID,resName,resType,resDate,resAuthor,resDescribe,resFile)values(?,?,?,?,?,?,?)";
 		
 		try {
 			conn=DbConn.getConn();
@@ -76,8 +76,7 @@ public class ResourceDaoImpl implements ResourceDao {
 			ps.setDate(4, new java.sql.Date(res.getResDate().getTime()));
 			ps.setString(5,res.getResAuthor());
 			ps.setString(6,res.getResDescribe());
-			ps.setString(7,"111");
-			ps.setString(8,res.getResFile());
+			ps.setString(7,res.getResFile());
 			i=ps.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -109,15 +108,36 @@ public class ResourceDaoImpl implements ResourceDao {
 	}
 
 	@Override
-	public int downRes(Resource resID) {
-		
-		return 0;
+	public Resource searchById(String id) {
+		Resource res = null;
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "select * from Resource where resID=?";
+		try {
+			conn = DbConn.getConn();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				res = new Resource();
+				res.setResAuthor(rs.getString("resAuthor"));
+				res.setResDescribe(rs.getString("resDescribe"));
+				res.setResDate(rs.getDate("resDate"));
+				res.setResFile(rs.getString("resFile"));
+				res.setResName(rs.getString("resName"));
+				res.setResID(id);
+				res.setResType(rs.getString("resType"));
+			}
+		} catch (SQLException e) {
+			throw new AnnounceInfoException("");
+		} finally {
+			DbConn.free(rs, ps, conn);
+		}
+		return res;
 	}
+
+
 	
-	private void setpath(String path){
-		
-		
-		
-	}
 
 }

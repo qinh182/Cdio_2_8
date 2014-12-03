@@ -16,4 +16,6 @@ public interface CompetitionDao {
 	public List<Competition> listCompe();
 	
 	public int addCompe(Competition competition);
+	
+	public Competition searchById(String id);
 }

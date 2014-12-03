@@ -15,6 +15,7 @@ public class Competition {
 	/**比赛ID*/
 	private String competitionID;
 	
+
 	/**比赛标题*/
 	private String competitionTitle;
 	
@@ -114,5 +115,9 @@ public class Competition {
 		this.competitionFile = competitionFile;
 	}
 
+	public Competition() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 }

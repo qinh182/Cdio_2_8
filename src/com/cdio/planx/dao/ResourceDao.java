@@ -19,5 +19,5 @@ public interface ResourceDao {
 	
 	public int delRes(Resource resID);
 	
-	public int downRes(Resource resID);
+	public Resource searchById(String id);
 }

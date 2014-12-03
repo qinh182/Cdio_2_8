@@ -1,9 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="com.cdio.planx.dao.*"%>
+<%@page import="com.cdio.planx.dao.impl.*"%>
+<%@page import="com.cdio.planx.domain.*"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+	+ request.getServerName() + ":" + request.getServerPort()
+	+ path + "/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -293,204 +296,319 @@ body {
 
 
 <body class="home-template">
-<div class="container">
-<div class="navbar navbar-inverse navbar-fixed-top">
-<div class="navbar-inner">
-<a href="#" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-callapse">
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</a>
-<a class="brand" herf="#">xxx社区</a>
-<div  class="nav-collapse">
-<ul class="nav nav-collapse">
-<li class="active"><a href="#">首页</a></li>
-<li ><a href="notice">通知详情</a></li>
-<li ><a href="competition">比赛资讯</a></li>
-<li ><a href="download.jsp">资源下载</a></li>
-<li ><a href="groom.jsp">书影推荐</a></li>
-<li ><a href="#">问题解答</a></li>
-<li ><a href="userinfo.jsp">个人信息</a></li>
-<li ><a href="#">班主任信箱</a></li>
-<li ><a href="login.jsp">注销</a></li>
-</ul>
-<ul class="nav pull-right">
-</ul>
-</div>
-</div>
-</div>
-</div>
+	<div class="container">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<a href="#" class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-callapse"> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
+				</a> <a class="brand" herf="#">xxx社区</a>
+				<div class="nav-collapse">
+					<ul class="nav nav-collapse">
+						<li class="active"><a href="#">首页</a></li>
+						<li><a href="notice">通知详情</a></li>
+						<li><a href="competition">比赛资讯</a></li>
+						<li><a href="download.jsp">资源下载</a></li>
+						<li><a href="groom.jsp">书影推荐</a></li>
+						<li><a href="#">问题解答</a></li>
+						<li><a href="userinfo.jsp">个人信息</a></li>
+						<li><a href="#">班主任信箱</a></li>
+						<li><a href="login.jsp">注销</a></li>
+					</ul>
+					<ul class="nav pull-right">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 
-     <div id="myCarousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-        <img src="/Cdio_2_8/bootstrap/img/10.jpg">
-         </div>
-        <div class="item">
-        <img src="/Cdio_2_8/bootstrap/img/08.jpg">
-         </div>
-        <div class="item">
-         <img src="/Cdio_2_8/bootstrap/img/09.jpg">
-         </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-    </div><!-- /.carousel -->
-   
-<div class="container">
- <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr> 
-                <td width="20" height="26" align="center" valign="middle"><img  src="/Cdio_2_8/bootstrap/img/u=4218969855,3478798194&fm=21&gp=0.jpg"></td>
-                <td class="biaoti1">
-					<span id="sdyw_title">近期比赛</span>
-					
+	<div id="myCarousel" class="carousel slide">
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="/Cdio_2_8/bootstrap/img/10.jpg">
+			</div>
+			<div class="item">
+				<img src="/Cdio_2_8/bootstrap/img/08.jpg">
+			</div>
+			<div class="item">
+				<img src="/Cdio_2_8/bootstrap/img/09.jpg">
+			</div>
+		</div>
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+	</div>
+	<!-- /.carousel -->
+
+	<div class="container">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="20" height="26" align="center" valign="middle"><img
+					src="/Cdio_2_8/bootstrap/img/u=4218969855,3478798194&fm=21&gp=0.jpg"></td>
+				<td class="biaoti1"><span id="sdyw_title">近期比赛</span></td>
+				<td width="72">
+					<div id="sdyw_more">
+						<div align=right>
+							<a href="competition" target="_self">更多>>></a>
+						</div>
+					</div>
+					<div id="mtsd_more" class="hide">
+						<div align=right>
+							<a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a>
+						</div>
+					</div>
 				</td>
-                <td width="72">
-					<div id="sdyw_more"><div align=right><a href="competition" target="_self">更多>>></a></div></div>
-					<div id="mtsd_more" class="hide"><div align=right><a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a></div></div>
-				</td>
-              </tr>
-            </table>
-            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#b42505">
-              <tr> 
-                <td width="280" height="2" bgcolor="#013765"></td>
-                <td width="160" bgcolor="#b42505"></td>
-              </tr>
-            </table>
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr> 
-                <td height="100" valign="top"> <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr> 
-                      <td height="3"></td>
-                    </tr>
-                  </table>
-              
-				  <div id="sdyw">
-					  <table width="100%" border="0" cellpadding="0" cellspacing="0">
-						<tr> 
-						  <td ><img  width="16" height="20" src="/Cdio_2_8/bootstrap/img/u=3470060291,1643827491&fm=21&gp=0.jpg"></td>
-						  <td><table width=100%  cellpadding=0 cellspacing=0 border=0><tr><td align=left><a href='/s/2/t/250/53/78/info86904.htm' target=_blank title="我校学生在第七届华南高校地理科学展示大赛中获佳绩">我校学生在第七届华南高校地理科学展示大赛中获佳绩</a></td><td  width='50' align=left><div style='white-space:nowrap'>2014-11-27</div></td><td width='30' align=right><div style='white-space:nowrap'><img src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></div></td></tr></table></td>
+			</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0"
+			bgcolor="#b42505">
+			<tr>
+				<td width="280" height="2" bgcolor="#013765"></td>
+				<td width="160" bgcolor="#b42505"></td>
+			</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="100" valign="top">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td height="3"></td>
 						</tr>
-						<tr> 
-						  <td height="1" colspan="2" background= background="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></td>
-						</tr>
-					  
-					
-					  </TABLE>
-				  </div>
+					</table> <%
+					CompetitionDao cd = new CompetitionDaoImpl();
+ 	List<Competition> listCompe = cd.listCompe();
+    int i = 0;
+    for (Competition competition : listCompe)
+    if(i++<3)  {
+ %>
+
+					<div id="sdyw">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+							<tr>
+								<td><img width="16" height="20"
+									src="/Cdio_2_8/bootstrap/img/u=3470060291,1643827491&fm=21&gp=0.jpg"></td>
+								<td><table width=100% cellpadding=0 cellspacing=0 border=0>
+										<td align=left><a href='detail?competition=<%=competition.getCompetitionID() %>&type=1' target=_blank
+											title=""> <%=competition.getCompetitionTitle()%></a></td>
+										<td width='50' align=left><div style='white-space:nowrap'><%=competition.getCompetitionDate() %></div></td>
+										<td width='30' align=right><div
+												style='white-space:nowrap'>
+												<img src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png">
+											</div></td>
+										</tr>
+
+									</table></td>
+							</tr>
+							<tr>
+								<td height="1" colspan="2" background=background= "/Cdio_2_8/bootstrap/img/5-120601152046-50.png"/>
+							</tr>
+						</table>
+					</div> <%
+ 	}
+ %>
 
 
 
 
-<div class="row" >
-				
-<div class="container span6 div-a" >
+					<div class="row">
+						<div class="container span6 div-a">
+							<div class="container span6">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="20" height="26" align="center" valign="middle"><img
+											src="/Cdio_2_8/bootstrap/img/44692044311.jpg"></td>
+										<td class="biaoti1"><span id="sdyw_title">最新问答</span></td>
+										<td width="72">
+											<div id="sdyw_more">
+												<div align=right>
+													<a href="/s/2/t/250/p/3/list.htm" target="_self">更多>>></a>
+												</div>
+											</div>
+											<div id="mtsd_more" class="hide">
+												<div align=right>
+													<a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</table>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0"
+									bgcolor="#b42505">
+									<tr>
+										<td width="280" height="2" bgcolor="#013765"></td>
+										<td width="160" bgcolor="#b42505"></td>
+									</tr>
+								</table>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td height="100" valign="top">
+											<table width="100%" border="0" cellspacing="0"
+												cellpadding="0">
+												<tr>
+													<td height="3"></td>
+												</tr>
+											</table>
+											<div id="sdyw">
+												<table width="100%" border="0" cellpadding="0"
+													cellspacing="0">
+													<tr>
+														<td><img width="16" height="20"
+															src="/Cdio_2_8/bootstrap/img/44692044311.jpg"></td>
+														<td><table width=100% cellpadding=0 cellspacing=0
+																border=0>
+																<tr>
+																	<td align=left><a
+																		href='#' target=_blank
+																		title="">高校地理科学展示大赛中获佳绩 </a></td>
+																	<td width='50' align=left><div
+																			style='white-space:nowrap'>2014-11-27</div></td>
+																	<td width='30' align=right><div
+																			style='white-space:nowrap'>
+																			<img
+																				src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png">
+																		</div></td>
+																</tr>
+															</table></td>
+													</tr>
+													<tr>
+														<td height="1" colspan="2" background=background="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></td>
+													</tr>
+												</table></div>
+												
+												<div id="sdyw">
+												<table width="100%" border="0" cellpadding="0"
+													cellspacing="0">
+													<tr>
+														<td><img width="16" height="20"
+															src="/Cdio_2_8/bootstrap/img/44692044311.jpg"></td>
+														<td><table width=100% cellpadding=0 cellspacing=0
+																border=0>
+																<tr>
+																	<td align=left><a
+																		href='#' target=_blank
+																		title="">高校地理科学展示大赛中获佳绩 </a></td>
+																	<td width='50' align=left><div
+																			style='white-space:nowrap'>2014-11-27</div></td>
+																	<td width='30' align=right><div
+																			style='white-space:nowrap'>
+																			<img
+																				src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png">
+																		</div></td>
+																</tr>
+															</table></td>
+													</tr>
+													<tr>
+														<td height="1" colspan="2" background=background="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></td>
+													</tr>
+												</table></div>
+												<div id="sdyw">
+												<table width="100%" border="0" cellpadding="0"
+													cellspacing="0">
+													<tr>
+														<td><img width="16" height="20"
+															src="/Cdio_2_8/bootstrap/img/44692044311.jpg"></td>
+														<td><table width=100% cellpadding=0 cellspacing=0
+																border=0>
+																<tr>
+																	<td align=left><a
+																		href='#' target=_blank
+																		title="">高校地理科学展示大赛中获佳绩 </a></td>
+																	<td width='50' align=left><div
+																			style='white-space:nowrap'>2014-11-27</div></td>
+																	<td width='30' align=right><div
+																			style='white-space:nowrap'>
+																			<img
+																				src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png">
+																		</div></td>
+																</tr>
+															</table></td>
+													</tr>
+													<tr>
+														<td height="1" colspan="2" background=background="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></td>
+													</tr>
+												</table></div>
+												
+								</table>
+							</div>
+							<div class="container span6">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="20" height="26" align="center" valign="middle"><img
+											src="/Cdio_2_8/bootstrap/img/21.jpg"></td>
+										<td class="biaoti1"><span id="sdyw_title">最新资源</span></td>
 
-<div class="container span6">
- <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr> 
-                <td width="20" height="26" align="center" valign="middle"><img  src="/Cdio_2_8/bootstrap/img/44692044311.jpg"></td>
-                <td class="biaoti1">
-					<span id="sdyw_title">最新问答</span>
-					
-				</td>
-                
-                <td width="72">
-					<div id="sdyw_more"><div align=right><a href="/s/2/t/250/p/3/list.htm" target="_self">更多>>></a></div></div>
-					<div id="mtsd_more" class="hide"><div align=right><a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a></div></div>
-				</td>
-              </tr>
-            </table>
-            
-            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#b42505">
-              <tr> 
-                <td width="280" height="2" bgcolor="#013765"></td>
-                <td width="160" bgcolor="#b42505"></td>
-              </tr>
-            </table>
-			
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr> 
-                <td height="100" valign="top"> <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr> 
-                      <td height="3"></td>
-                    </tr>
-                  </table>
-				  <div id="sdyw">
-					  <table width="100%" border="0" cellpadding="0" cellspacing="0">
-						<tr> 
-						  <td ><img width="16" height="20" src="/Cdio_2_8/bootstrap/img/u=3470060291,1643827491&fm=21&gp=0.jpg"></td>
-						  <td><table width=100%  cellpadding=0 cellspacing=0 border=0><tr><td align=left><a href='/s/2/t/250/53/78/info86904.htm' target=_blank title="我校学生在第七届华南高校地理科学展示大赛中获佳绩">我校学生在第七届华南高校地理科学展示大赛中获佳绩</a></td><td  width='50' align=left><div style='white-space:nowrap'>2014-11-27</div></td><td width='30' align=right><div style='white-space:nowrap'><img src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></div></td></tr></table></td>
-						</tr>
-						<tr> 
-						  <td height="1" colspan="2" background= background="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></td>
-						</tr>
-					  
-					
-					  </table>
-               </table>        
-               
-				
-        </div>
-        
-<div class="container span6">
-
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr> 
-                <td width="20" height="26" align="center" valign="middle"><img   src="/Cdio_2_8/bootstrap/img/21.jpg"></td>
-                <td class="biaoti1">
-					<span id="sdyw_title">最新资源</span>
-					
-				</td>
-                
-                <td width="72">
-					<div id="sdyw_more"><div align=right><a href="download.jsp" target="_self">更多>>></a></div></div>
-					<div id="mtsd_more" class="hide"><div align=right><a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a></div></div>
-				</td>
-              </tr>
-        </table>
-            
-            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#b42505">
-              <tr> 
-                <td width="280" height="2" bgcolor="#013765"></td>
-                <td width="160" bgcolor="#b42505"></td>
-              </tr>
-            </table>
-			
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr> 
-                <td height="100" valign="top"> <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr> 
-                      <td height="3"></td>
-                    </tr>
-                  </table>
-				  <div id="sdyw">
-					  <table width="100%" border="0" cellpadding="0" cellspacing="0">
-						<tr> 
-						  <td><img width="16" height="20" src="/Cdio_2_8/bootstrap/img/u=3470060291,1643827491&fm=21&gp=0.jpg"></td>
-						  <td><table width=100%  cellpadding=0 cellspacing=0 border=0><tr><td align=left><a href='/s/2/t/250/53/78/info86904.htm' target=_blank title="我校学生在第七届华南高校地理科学展示大赛中获佳绩">我校学生在第七届华南高校地理科学展示大赛中获佳绩</a></td><td  width='50' align=left><div style='white-space:nowrap'>2014-11-27</div></td><td width='30' align=right><div style='white-space:nowrap'><img src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></div></td></tr></table></td>
-						</tr>
-						<tr> 
-						  <td height="1" colspan="2" background= background="../bootstrap/bootstrap/img/5-120601152046-50.png"></td>
-						</tr>
-					  
-					
-					  </table>
-        </table>        
-                               
-               
-				
-      </div>
-
-     
-   </div> 
-   
-     <div class="div-b pull-right">
-     
-       <img width="442" height="330" src="/Cdio_2_8/bootstrap/img/20.jpg">       <!-- Example row of columns -->
-     
-
-</div>
+										<td width="72">
+											<div id="sdyw_more">
+												<div align=right>
+													<a href="download.jsp" target="_self">更多>>></a>
+												</div>
+											</div>
+											<div id="mtsd_more" class="hide">
+												<div align=right>
+													<a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</table>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0"
+									bgcolor="#b42505">
+									<tr>
+										<td width="280" height="2" bgcolor="#013765"></td>
+										<td width="160" bgcolor="#b42505"></td>
+									</tr>
+								</table>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td height="100" valign="top">
+											<table width="100%" border="0" cellspacing="0"
+												cellpadding="0">
+												<tr>
+													<td height="3"></td>
+												</tr>
+											</table>
+											<%
+					ResourceDao rd = new ResourceDaoImpl();
+					List<Resource> listRes = rd.listRes();
+					int j = 0;
+					for (Resource res : listRes)
+						if (j++ < 3) {
+				%>
+											<div id="sdyw">
+												<table width="100%" border="0" cellpadding="0"
+													cellspacing="0">
+													<tr>
+														<td><img width="16" height="20"
+															src="/Cdio_2_8/bootstrap/img/21.jpg""></td>
+														<td><table width=100% cellpadding=0 cellspacing=0
+																border=0>
+																<tr>
+																	<td align=left><a
+																		href='detail?res=<%=res.getResID() %>&type=3' target=_blank
+																		title=""><%=res.getResDescribe() %></a></td>
+																	<td width='50' align=left><div
+																			style='white-space:nowrap'><%=res.getResDate() %></div></td>
+																	<td width='30' align=right><div
+																			style='white-space:nowrap'>
+																			<img
+																				src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png">
+																		</div></td>
+																</tr>
+															</table></td>
+													</tr>
+													<tr>
+														<td height="1" colspan="2" background=background="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></td>
+													</tr>
+												</table></div>
+												<%} %>
+								</table>
+							</div>
+						</div>
+						<div class="div-b pull-right">
+							<img width="442" height="330"
+								src="/Cdio_2_8/bootstrap/img/20.jpg">
+							<!-- Example row of columns -->
+						</div>
 						<script>
 							!function($) {
 								$(function() {

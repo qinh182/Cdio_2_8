@@ -364,7 +364,7 @@ body {
 						<td><strong>资源分类：<%=res.getResType()%></strong></td>
 						<td><strong>资源大小：</strong></td>
 						<td align="right">
-							<button type="button" class="btn btn-primary">下载</button>
+							<button type="button" ><a  href="downloadJsp.jsp?fileName=<%=res.getResFile()%>">下载</a></button>
 						</td>
 					</tr>
 				</table>
@@ -390,7 +390,7 @@ body {
 						<td><strong>资源分类：<%=res.getResType()%></strong></td>
 						<td><strong>资源大小：</strong></td>
 						<td align="right">
-							<button type="button" class="btn btn-primary">下载</button>
+							<button type="button"><a  href="downloadJsp.jsp?fileName=<%=res.getResFile()%>">下载</a></button>
 						</td>
 					</tr>
 				</table><%
@@ -415,7 +415,7 @@ body {
 						<td><strong>资源分类：<%=res.getResType()%></strong></td>
 						<td><strong>资源大小：</strong></td>
 						<td align="right">
-							<button type="button" class="btn btn-primary">下载</button>
+							<button type="button" ><a href="downloadJsp.jsp?fileName=<%=res.getResFile()%>">下载</a></button>
 						</td>
 					</tr>
 				</table><%
@@ -440,7 +440,7 @@ body {
 						<td><strong>资源分类：<%=res.getResType()%></strong></td>
 						<td><strong>资源大小：</strong></td>
 						<td align="right">
-							<button type="button" class="btn btn-primary">下载</button>
+							<button type="button" ><a  href="downloadJsp.jsp?fileName=<%=res.getResFile()%>">下载</a></button>
 						</td>
 					</tr>
 				</table><%

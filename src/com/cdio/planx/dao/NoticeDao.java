@@ -17,5 +17,5 @@ public interface NoticeDao {
 	
 	public int addNotice(Notice notice);
 	
-	
+	public Notice searchById(String id);
 }

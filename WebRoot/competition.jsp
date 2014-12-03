@@ -354,11 +354,7 @@ body {
 
 				</td>
 				<td width="72">
-					<div id="sdyw_more">
-						<div align=right>
-							<a href="/s/2/t/250/p/3/list.htm" target="_self">更多>>></a>
-						</div>
-					</div>
+					
 					<div id="mtsd_more" class="hide">
 						<div align=right>
 							<a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a>
