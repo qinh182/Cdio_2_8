@@ -22,7 +22,6 @@ import com.cdio.planx.utils.DbConn;
  *
  */
 public class CompetitionDaoImpl implements CompetitionDao {
-
 	@Override
 	public List<Competition> listCompe() {
 		Connection conn = null;
@@ -30,7 +29,6 @@ public class CompetitionDaoImpl implements CompetitionDao {
 		ResultSet rs = null;
 		List<Competition> listCompe = new ArrayList<Competition>();
 		String sql = "select * from Competition";
-
 		try {
 			conn = DbConn.getConn();
 			stmt = conn.createStatement();
@@ -41,17 +39,15 @@ public class CompetitionDaoImpl implements CompetitionDao {
 				competition.setCompetitionContent(rs.getString("competitionContent"));
 				competition.setCompetitionDate(rs.getDate("competitionDate"));
 				competition.setCompetitionID(rs.getString("competitionID"));
-				competition.setCompetitionDate(rs.getDate("competitionDate"));
 				competition.setCompetitionFile(rs.getString("competitionFile"));
 				competition.setCompetitionTitle(rs.getString("competitionTitle"));
-
 				listCompe.add(competition);
 			}
 		} catch (SQLException e) {
 			throw new AnnounceInfoException("");
-
 		}
 		return listCompe;
+		
 	}
 
 	@Override
@@ -59,19 +55,19 @@ public class CompetitionDaoImpl implements CompetitionDao {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		int i = 0;
+		String num = listCompe().size()+"";
 		String sql = "insert into Competition(competitionID,competitionContent,competitionDate,competitionAuthor,competitionFile,competitionTitle)values(?,?,?,?,?,?)";
 
 		try {
 			conn = DbConn.getConn();
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, competition.getCompetitionID());
+			ps.setString(1, num);
 			ps.setString(2, competition.getCompetitionContent());
 			ps.setDate(3, new java.sql.Date(competition.getCompetitionDate().getTime()));
 			ps.setString(4, competition.getCompetitionAuthor());
 			ps.setString(5, competition.getCompetitionFile());
 			ps.setString(6, competition.getCompetitionTitle());
 			i = ps.executeUpdate();
-
 		} catch (SQLException e) {
 			throw new AnnounceInfoException("");
 		} finally {

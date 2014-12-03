@@ -19,6 +19,7 @@ import com.cdio.planx.dao.ResourceDao;
 import com.cdio.planx.domain.Resource;
 import com.cdio.planx.exception.AnnounceInfoException;
 import com.cdio.planx.exception.PersonInfoException;
+import com.cdio.planx.utils.CdioUtils;
 import com.cdio.planx.utils.DbConn;
 
 /**
@@ -40,12 +41,15 @@ public class ResourceDaoImpl implements ResourceDao {
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				Resource res = new Resource();
+				
 				res.setResName(rs.getString("resName"));
 				res.setResDate(rs.getDate("resDate"));
 				res.setResDescribe(rs.getString("resDescribe"));
 				res.setResID(rs.getString("resID"));
 				res.setResPic(rs.getString("resPic"));
+				res.setResFile(rs.getString("resFile"));
 				res.setResType(rs.getString("resType"));
+				res.setResAuthor("resAuthor");
 				listRes.add(res);
 			}
 		} catch (SQLException e) {
@@ -59,34 +63,26 @@ public class ResourceDaoImpl implements ResourceDao {
 	public int addRes(Resource res) {
 		Connection conn = null;
 		PreparedStatement ps=null;
-		File file =null; 
-		FileInputStream fin =null;
 		int i=0;
+		String num = listRes().size()+"";
 		String sql="insert into Resource(resID,resName,resType,resDate,resAuthor,resDescribe,resPic,resFile)values(?,?,?,?,?,?,?,?)";
 		
 		try {
 			conn=DbConn.getConn();
 			ps=conn.prepareStatement(sql);
-			ps.setString(1,res.getResID());
+			ps.setString(1,num);
 			ps.setString(2,res.getResName());
 			ps.setString(3,res.getResType());
-			ps.setDate(4,(Date) res.getResDate());
+			ps.setDate(4, new java.sql.Date(res.getResDate().getTime()));
 			ps.setString(5,res.getResAuthor());
 			ps.setString(6,res.getResDescribe());
-			file =	new File(res.getResPic());
-			fin = new FileInputStream(file);
-			ps.setBinaryStream(7, fin,file.length());
-			file = new File(res.getResPic());
-			fin = new FileInputStream(file);
-			ps.setBinaryStream(8, fin,file.length());
+			ps.setString(7,"111");
+			ps.setString(8,res.getResFile());
 			i=ps.executeUpdate();
 			
 		} catch (SQLException e) {
-			throw new AnnounceInfoException("");
-		} catch (FileNotFoundException e) {
-			throw new AnnounceInfoException("");
+		throw new AnnounceInfoException("");
 		}finally{
-			
 			DbConn.free(null, ps, conn);
 		}
 		

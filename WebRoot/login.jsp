@@ -129,7 +129,7 @@ p.sign-up {
 				<input type="password"class="form-control" name="password" placeholder="请输入密码" required autofocus/>
 				<select class="selectpicker" data-style="btn-primary"
 					name="userPermi">
-					<option value=" ">请选择您的身份</option>
+			<!--	<option value=" ">请选择您的身份</option>  -->	
 					<option value="0">学生</option>
 					<option value="1">班干部</option>
 					<option value="2">教师</option>

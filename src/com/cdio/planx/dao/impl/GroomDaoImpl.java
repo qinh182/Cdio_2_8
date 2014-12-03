@@ -28,7 +28,7 @@ public class GroomDaoImpl implements GroomDao {
 		Connection conn = null;
 		Statement stmt=null;
 		ResultSet rs=null;
-		List<Groom> listgrooms=new ArrayList<Groom>();
+		List<Groom> listGrooms=new ArrayList<Groom>();
 		String sql = "select * from Groom";
 		
 		try {
@@ -37,19 +37,20 @@ public class GroomDaoImpl implements GroomDao {
 			rs=stmt.executeQuery(sql);
 			while(rs.next()){
 				Groom groom = new Groom();
-				groom.setGroomID(rs.getString("stuAcademy"));
-				
-				String groomTitle;
-				String groomPic;
-				String groomBrief;
-				Date groomDate;
-				String groomType;
+				groom.setGroomID(rs.getString("groomID"));
+				groom.setGroomTitle(rs.getString("groomTitle"));
+				groom.setGroomPic(rs.getString("groomPic"));
+				groom.setGroomBrief(rs.getString("groomBrief"));
+				groom.setGroomAuthor(rs.getString("groomAuthor"));
+				groom.setGroomDate(rs.getDate("groomDate"));
+				groom.setGroomType(rs.getString("groomType"));
+				listGrooms.add(groom);
 			}
 		}catch(SQLException e) {
 			throw new PersonInfoException("");
 			
 		}
-		return null;
+		return listGrooms;
 	}
 
 	@Override

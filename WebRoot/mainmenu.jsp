@@ -307,12 +307,12 @@ body {
 <li class="active"><a href="#">首页</a></li>
 <li ><a href="notice">通知详情</a></li>
 <li ><a href="competition">比赛资讯</a></li>
-<li ><a href="#">资源下载</a></li>
-<li ><a href="#">书影推荐</a></li>
+<li ><a href="download.jsp">资源下载</a></li>
+<li ><a href="groom.jsp">书影推荐</a></li>
 <li ><a href="#">问题解答</a></li>
-<li ><a href="#">个人信息</a></li>
+<li ><a href="userinfo.jsp">个人信息</a></li>
 <li ><a href="#">班主任信箱</a></li>
-<li ><a href="#">注销</a></li>
+<li ><a href="login.jsp">注销</a></li>
 </ul>
 <ul class="nav pull-right">
 </ul>
@@ -346,7 +346,7 @@ body {
 					
 				</td>
                 <td width="72">
-					<div id="sdyw_more"><div align=right><a href="/s/2/t/250/p/3/list.htm" target="_self">更多>>></a></div></div>
+					<div id="sdyw_more"><div align=right><a href="competition" target="_self">更多>>></a></div></div>
 					<div id="mtsd_more" class="hide"><div align=right><a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a></div></div>
 				</td>
               </tr>
@@ -372,7 +372,7 @@ body {
 						  <td><table width=100%  cellpadding=0 cellspacing=0 border=0><tr><td align=left><a href='/s/2/t/250/53/78/info86904.htm' target=_blank title="我校学生在第七届华南高校地理科学展示大赛中获佳绩">我校学生在第七届华南高校地理科学展示大赛中获佳绩</a></td><td  width='50' align=left><div style='white-space:nowrap'>2014-11-27</div></td><td width='30' align=right><div style='white-space:nowrap'><img src="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></div></td></tr></table></td>
 						</tr>
 						<tr> 
-						  <td height="1" colspan="2" background= background="../bootstrap/bootstrap/img/5-120601152046-50.png"></td>
+						  <td height="1" colspan="2" background= background="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></td>
 						</tr>
 					  
 					
@@ -444,7 +444,7 @@ body {
 				</td>
                 
                 <td width="72">
-					<div id="sdyw_more"><div align=right><a href="/s/2/t/250/p/3/list.htm" target="_self">更多>>></a></div></div>
+					<div id="sdyw_more"><div align=right><a href="download.jsp" target="_self">更多>>></a></div></div>
 					<div id="mtsd_more" class="hide"><div align=right><a href="/s/2/t/250/p/20/list.htm" target="_self">更多>>></a></div></div>
 				</td>
               </tr>

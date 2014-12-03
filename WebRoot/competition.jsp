@@ -406,15 +406,14 @@ body {
 									</table></td>
 							</tr>
 							<tr>
-								<td height="1" colspan="2" background=background="../bootstrap/bootstrap/img/5-120601152046-50.png"></td>
+								<td height="1" colspan="2" background=background="/Cdio_2_8/bootstrap/img/5-120601152046-50.png"></td>
 							</tr>
 
 
 						</TABLE>
 					</div> <%
  	}
- %>
-					</div> <a href="#SubmitCompetition" data-toggle="modal"
+ %> <a href="#SubmitCompetition" data-toggle="modal"
 					class="btn btn-primary">发布资讯</a>
 
 					<div class="modal hide" id="SubmitCompetition">
@@ -425,12 +424,14 @@ body {
 							</div>
 						</div>
 						<div class="modal-body">
-							<form class="form-horizontal">
+							<form class="form-horizontal" action="issuecompetition"
+								ENCTYPE="multipart/form-data"method="post">
 								<div>
 									<div class="control-group">
 										<label class="control-label">资讯标题</label>
 										<div class="controls">
-											<input type="text" placeholder="输入您的标题名" class="span3">
+											<input type="text" placeholder="输入您的标题名" class="span3"
+												name="title">
 										</div>
 									</div>
 								</div>
@@ -438,41 +439,26 @@ body {
 									<div class="control-group">
 										<label class="control-label">资讯内容</label>
 										<div class="controls">
-											<textarea class="form-horizontal" rows="8" cols="20"></textarea>
+											<textarea class="form-horizontal" rows="8" cols="20"
+												name="content"></textarea>
 										</div>
+										<div class="span4"></div>
+
+										<button type="submit" class="btn btn-primary pull-right">发表</button>
+										<div>
+											<div class="control-group">
+												<label class="control-label">文件传输</label>
+												<div class="controls">
+													<input type="file" id="inputfile"name="file">
+												</div>
+											</div>
+										</div>
+
 									</div>
 								</div>
 
 
 							</form>
 						</div>
-						<div class="modal-footer">
-							<form class="form-horizontal">
-								<div class="span4">
-									<div class="control-group">
-										<label class="control-label">名称</label>
-										<div class="controls">
-											<input type="text" placeholder="输入您的文件名" class="span3">
-										</div>
-									</div>
-								</div>
-
-								<button type="button" class="btn btn-primary">发表</button>
-								<div class="span4">
-									<div class="control-group">
-										<label class="control-label">文件传输</label>
-										<div class="controls">
-											<input type="file" id="inputfile">
-										</div>
-									</div>
-								</div>
-						</div>
-
-						</form>
-					</div>
-
-
-					</div>
-					</div>
 </body>
 </html>
