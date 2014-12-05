@@ -48,8 +48,9 @@ public class UploadServlet extends HttpServlet {
 			
 		}catch(Exception e){
 			e.getStackTrace();
+			response.sendRedirect("mainmenu.jsp");
 		}
-		
+		response.sendRedirect("mainmenu.jsp");
 
 }
 		

@@ -52,7 +52,7 @@ public class IssueCompetitionServlet extends HttpServlet {
 			cd.addCompe(competition);
 		} catch (Exception e) {
 		
-			response.sendRedirect("errorpage.jsp");
+			response.sendRedirect("mainmenu.jsp");
 			return;
 		}
 		response.sendRedirect("mainmenu.jsp");

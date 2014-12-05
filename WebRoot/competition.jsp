@@ -313,7 +313,7 @@ body {
 				<a href="#" class="btn btn-navbar" data-toggle="collapse"
 					data-target=".nav-callapse"> <span class="icon-bar"></span> <span
 					class="icon-bar"></span> <span class="icon-bar"></span>
-				</a> <a class="brand" herf="#">xxx社区</a>
+				</a> <a class="brand" herf="#">师生交流社区</a>
 				<div class="nav-collapse">
 					<ul class="nav nav-collapse">
 							<li ><a href="mainmenu.jsp">首页</a></li>

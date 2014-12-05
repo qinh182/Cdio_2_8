@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.nio.channels.FileChannel;
 import java.util.Date;
 import java.util.Iterator;
@@ -51,10 +52,12 @@ public class CdioUtils {
 
 	}
 	
-	public static Competition CompetitionFileUpload(HttpServletRequest request,String filePath,String author) {
+	public static Competition CompetitionFileUpload(HttpServletRequest request,String filePath,String author) throws UnsupportedEncodingException {
 		Competition competition = new Competition();
+		request.setCharacterEncoding("utf-8");
 		competition.setCompetitionAuthor(author);
 		competition.setCompetitionDate(new Date());
+		
 		
 		try {
 	        DiskFileUpload fu = new DiskFileUpload();
@@ -85,8 +88,9 @@ public class CdioUtils {
 		return competition;
 	}
 	
-	public static Resource ResFileUpload(HttpServletRequest request,String filePath,String author) {
+	public static Resource ResFileUpload(HttpServletRequest request,String filePath,String author) throws UnsupportedEncodingException {
 		Resource resource = new Resource();
+		request.setCharacterEncoding("utf-8");
 		resource.setResAuthor(author);
 		resource.setResDate(new Date());
 		

@@ -141,7 +141,7 @@ p.sign-up {
 				in</button>
 		</form>
 		<p class="text-center sign-up">
-			欢迎进入<strong>xxx社区</strong>
+			欢迎进入<strong>师生交流社区</strong>
 		</p>
 	</div>
 
