@@ -34,7 +34,7 @@ public class UploadServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String paths = getServletContext().getRealPath("/")+"upload";
+		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession session = request.getSession();
